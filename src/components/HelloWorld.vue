@@ -1,28 +1,29 @@
 <template>
-  <h1>{{this.globalVar.name}} {{name}} - {{$store.getters.watchCounter}}</h1>
-  <a-button type="primary" @click="$store.dispatch('increment')">Primary Button</a-button>
-
-  <a-button type="primary" shape="circle">
-    <template #icon><SearchOutlined /></template>
-  </a-button>
-
+  <div class="hello">
+    <h1>{{ $store.state.counter }} - {{$store.getters.watchCounter}}</h1>
+    
+    <a-button type="primary" shape="circle" @click="$store.dispatch('increment')">
+      <template #icon><SearchOutlined /></template>
+    </a-button>
+  </div>
 </template>
 
-<script>
-import {SearchOutlined} from '@ant-design/icons-vue'
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { SearchOutlined } from '@ant-design/icons-vue';
+
+export default defineComponent({
   name: 'HelloWorld',
   components: {
-    SearchOutlined
+    SearchOutlined,
   },
-  data: function() {
-    return {
-      name: 'HelloWorld',
-    }
+  props: {
+    msg: String,
   },
-}
+});
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

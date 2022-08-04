@@ -2,8 +2,10 @@
   <h2>{{name}}</h2>
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+  export default defineComponent({
     name: 'HelloProps',
     props: {
       name: {
@@ -11,5 +13,5 @@
         required: true,
       },
     }
-  }
+  })
 </script>
