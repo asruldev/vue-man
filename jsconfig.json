@@ -4,6 +4,7 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    "jsx": "preserve", // tambah untuk ngilangin warning jsx pada vue
     "paths": {
       "@/*": [
         "src/*"
